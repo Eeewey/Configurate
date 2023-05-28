@@ -1,0 +1,280 @@
+﻿<mah:MetroWindow
+    x:Class="Configurate.WindowSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Configurate"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WindowSettings"
+    Width="700"
+    Height="400"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:WindowSettingsVM />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+        <Canvas>
+            <GroupBox
+                Canvas.Left="300"
+                Canvas.Top="232"
+                Width="338"
+                Height="106"
+                Padding="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Header="Модуль компенсации асимметрии управления">
+                <Grid
+                    Width="306"
+                    Height="67"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <CheckBox
+                        Margin="0,0,0,41"
+                        Content="Включено"
+                        Command="{Binding CompAsymCheck, Mode=OneTime}"
+                        FontSize="14" />
+                    <TextBox
+                        Canvas.Left="10"
+                        Canvas.Top="72"
+                        Width="75"
+                        Height="18"
+                        Margin="0,31,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        mah:TextBoxHelper.Watermark="0.0"
+                        mah:TextBoxHelper.WatermarkAlignment="Center"
+                        BorderThickness="2,2,2,2"
+                        Text="{Binding SimK, UpdateSourceTrigger=PropertyChanged}"
+                        TextAlignment="Center" />
+                    <TextBlock
+                        Canvas.Left="93"
+                        Canvas.Top="72"
+                        Width="63"
+                        Height="26"
+                        Margin="80,34,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="14"
+                        Text="SimK"
+                        TextAlignment="Center" />
+                </Grid>
+            </GroupBox>
+            <TextBlock
+                Canvas.Left="93"
+                Canvas.Top="10"
+                Width="63"
+                Height="26"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="Kp"
+                TextAlignment="Center" />
+            <TextBox
+                Canvas.Left="10"
+                Canvas.Top="10"
+                Width="75"
+                Height="18"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                mah:TextBoxHelper.Watermark="Kp"
+                mah:TextBoxHelper.WatermarkAlignment="Center"
+                BorderThickness="2,2,2,2"
+                Text="{Binding Pparam, UpdateSourceTrigger=PropertyChanged}"
+                TextAlignment="Center" />
+            <TextBox
+                Canvas.Left="10"
+                Canvas.Top="41"
+                Width="75"
+                Height="18"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                mah:TextBoxHelper.Watermark="Ki"
+                mah:TextBoxHelper.WatermarkAlignment="Center"
+                BorderThickness="2,2,2,2"
+                Text="{Binding Iparam, UpdateSourceTrigger=PropertyChanged}"
+                TextAlignment="Center" />
+            <TextBox
+                Canvas.Left="10"
+                Canvas.Top="72"
+                Width="75"
+                Height="18"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                mah:TextBoxHelper.Watermark="Kd"
+                mah:TextBoxHelper.WatermarkAlignment="Center"
+                BorderThickness="2,2,2,2"
+                Text="{Binding Dparam, UpdateSourceTrigger=PropertyChanged}"
+                TextAlignment="Center" />
+            <TextBox
+                Canvas.Left="10"
+                Canvas.Top="103"
+                Width="75"
+                Height="18"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                mah:TextBoxHelper.Watermark="Step(ms)"
+                mah:TextBoxHelper.WatermarkAlignment="Center"
+                BorderThickness="2,2,2,2"
+                Text="{Binding Step, UpdateSourceTrigger=PropertyChanged}"
+                TextAlignment="Center" />
+            <Button
+                Canvas.Left="131"
+                Canvas.Top="324"
+                Width="116"
+                Height="34"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                BorderThickness="1,1,1,1"
+                Command="{Binding LoadConfig, Mode=OneTime}"
+                Content="Загрузить" />
+            <Button
+                Canvas.Left="10"
+                Canvas.Top="324"
+                Width="116"
+                Height="34"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                BorderThickness="1,1,1,1"
+                Command="{Binding SaveConfigFile, Mode=OneTime}"
+                Content="Сохранить как"
+                Style="{DynamicResource MahApps.Styles.Button.Flat}" />
+            <Button
+                Canvas.Left="10"
+                Canvas.Top="285"
+                Width="237"
+                Height="34"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                BorderThickness="1,1,1,1"
+                Command="{Binding SaveConfig, Mode=OneTime}"
+                Content="Сохранить"
+                Style="{DynamicResource MahApps.Styles.Button.Flat}" />
+            <TextBlock
+                Canvas.Left="93"
+                Canvas.Top="41"
+                Width="63"
+                Height="26"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="14"
+                Text="Ki"
+                TextAlignment="Center" />
+            <TextBlock
+                Canvas.Left="93"
+                Canvas.Top="72"
+                Width="63"
+                Height="26"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="14"
+                Text="Kd"
+                TextAlignment="Center" />
+            <TextBlock
+                Canvas.Left="93"
+                Canvas.Top="103"
+                Width="63"
+                Height="26"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="14"
+                Text="Step(ms)"
+                TextAlignment="Center" />
+
+            <GroupBox
+                Canvas.Left="300"
+                Canvas.Top="10"
+                Width="338"
+                Height="106"
+                Padding="5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Header="Резонансный модуль">
+                <Grid
+                    Width="306"
+                    Height="67"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="82*" />
+                        <ColumnDefinition Width="65*" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox
+                        Grid.ColumnSpan="2"
+                        Margin="0,0,0,41"
+                        Content="Включено"
+                        IsChecked="{Binding ResCheck, Mode=TwoWay}"
+                        FontSize="14" />
+                    <TextBox
+                        Width="75"
+                        Height="18"
+                        Margin="0,31,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        mah:TextBoxHelper.Watermark="0.0"
+                        mah:TextBoxHelper.WatermarkAlignment="Center"
+                        BorderThickness="2,2,2,2"
+                        Text="{Binding ResW, UpdateSourceTrigger=PropertyChanged}"
+                        TextAlignment="Center" />
+                    <TextBlock
+                        Width="63"
+                        Height="26"
+                        Margin="80,34,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="14"
+                        Text="ResW"
+                        TextAlignment="Center" />
+                </Grid>
+            </GroupBox>
+            <GroupBox
+                Canvas.Left="300"
+                Canvas.Top="121"
+                Height="106"
+                Padding="5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Header="Модуль компенсации смещения нуля управления">
+                <Grid
+                    Width="310"
+                    Height="67"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <CheckBox
+                        Margin="0,0,0,41"
+                        Content="Включено"
+                        Command="{Binding CompZeroCheck, Mode=OneTime}"
+                        FontSize="14" Checked="CheckBox_Checked" />
+                    <TextBox
+                        Canvas.Left="10"
+                        Canvas.Top="72"
+                        Width="75"
+                        Height="18"
+                        Margin="0,31,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        mah:TextBoxHelper.Watermark="0.0"
+                        mah:TextBoxHelper.WatermarkAlignment="Center"
+                        BorderThickness="2,2,2,2"
+                        Text="{Binding Offset, UpdateSourceTrigger=PropertyChanged}"
+                        TextAlignment="Center" />
+                    <TextBlock
+                        Canvas.Left="93"
+                        Canvas.Top="72"
+                        Width="63"
+                        Height="26"
+                        Margin="80,34,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="14"
+                        Text="Offset"
+                        TextAlignment="Center" />
+                </Grid>
+            </GroupBox>
+        </Canvas>
+    </Grid>
+</mah:MetroWindow>

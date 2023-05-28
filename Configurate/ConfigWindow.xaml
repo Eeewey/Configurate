@@ -1,0 +1,41 @@
+﻿<mah:MetroWindow
+    x:Class="Configurate.ConfigWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Configurate"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ConfigWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ConfigWindowVM />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <CheckBox
+                Name="checkBox0"
+                Width="40"
+                Height="20"
+                Command="{Binding LoadPRegCommand, Mode=OneTime}"
+                Content="1"
+                IsChecked="False" />
+            <CheckBox
+                Name="checkBox1"
+                Width="40"
+                Height="20"
+                Command="{Binding LoadIRegCommand, Mode=OneTime}"
+                Content="2"
+                IsChecked="False" />
+            <CheckBox
+                Name="checkBox2"
+                Width="40"
+                Height="20"
+                Command="{Binding LoadDRegCommand, Mode=OneTime}"
+                Content="3"
+                IsChecked="False" />
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>
